@@ -1,0 +1,55 @@
+ 
+Dataset Background
+The data is from experiments performed in UCI.
+
+Feature Selection
+The features selected for this database come from the accelerometer and gyroscope 3-axial (X, Y, and Z) raw signals tAcc-XYZ and tGyro-XYZ
+These time domain signals (prefix 't') were captured at a constant rate of 50 Hz. Then they were filtered to remove noise. The acceleration signal was then separated into body and gravity acceleration signals
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+The body linear acceleration and angular velocity were derived in time to obtain Jerk signals
+
+tBodyAccJerk-XYZ
+tBodyGyroJerk-XYZ
+
+These signals were used to estimate variables of the feature vector for each pattern:
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+The set of variables that were estimated from these signals are (remove other estimation that will be used in this transformation):
+mean(): Mean value
+std(): Standard deviation
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+gravityMean
+tBodyAccMean
+tBodyAccJerkMean
+tBodyGyroMean
+tBodyGyroJerkMean
+Transformation
+Based on the following 5 steps, the tidy dataset is gradually generated. This transformation only includes "subject_test.txt", "subject_train.txt", "X_teat.txt", "X_train.txt", "y_test.txt" and "y_train.txt". Only mean and standard deviation are kept in the merged dataset. Labeling activities and refining variables names give readible ability. The final goal is to create a Tidy dataset including one subject, one activity, and one average.
+Merge the training and the test sets to create one data set.
+ 
+Uses descriptive activity names to name the activities in the data set.
+Use the numeric ID in "activity_labels.txt" to link back the numeric values in the dataset (y_test/y_train) and find out the activity names.
+
+Appropriately labels the data set with descriptive variable names.
+Use "features.txt" to label variable names
+Change "f" to "freq"
+Change "t" to "time"
+Change "-" to "."
+Remove "()"
